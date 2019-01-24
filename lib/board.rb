@@ -4,25 +4,26 @@ require 'board_case'
 require 'pry'
 
 
-class Board
-  attr_accessor :choosen_case1 :choosen_case2
+class Board 
+  attr_accessor :choosen_case1 , :choosen_case2 
+
+  def new_game
+  @a1 = "-"
+  @a2 = "-"
+  @a3 = "-"
+  @b1 = "-"
+  @b2 = "-"
+  @b3 = "-"
+  @c1 = "-"
+  @c2 = "-"
+  @c3 = "-"
+  end 
 
 
-
-  def choose_case1 
-
-    a1 = "-"
-    a2 = "-"
-    a3 = "-"
-    b1 = "-"
-    b2 = "-"
-    b3 = "-"
-    c1 = "-"
-    c2 = "-"
-    c3 = "-"
+  def choose_case1
 
     # Le joueur 1 choisit une case
-    puts "#{@player_one} choisit une case"
+    puts "Joueur 1, choisit une case"    #idéalement remplacer joueur 1 par son prénom
     @choosen_case1 = gets.chomp.to_s
 
 
@@ -30,31 +31,31 @@ class Board
     case @choosen_case1
 
     when "A1"
-      a1 = "X"
+      @a1 = "X"
 
     when "A2"
-      a2 = "X"
+      @a2 = "X"
 
     when "A3"
-      a3 = "X"
+      @a3 = "X"
 
     when "B1"
-      b1 = "X"
+      @b1 = "X"
 
     when "B2"
-      b2 = "X"
+      @b2 = "X"
 
     when "B3"
-      b3 = "X"
+      @b3 = "X"
 
     when "C1"
-      c1 = "X"
+      @c1 = "X"
 
     when "C2"
-      c2 = "X"
+      @c2 = "X"
 
     when "C3"
-      c3 = "X"
+      @c3 = "X"
 
     else 
       "Vous avez mal tapé la case, vous venez de perdre un tour :)"
@@ -68,18 +69,9 @@ class Board
 
   def choose_case2
 
-    a1 = "-"
-    a2 = "-"
-    a3 = "-"
-    b1 = "-"
-    b2 = "-"
-    b3 = "-"
-    c1 = "-"
-    c2 = "-"
-    c3 = "-"
 
     # Le joueur 2 choisit une case
-    puts "#{@player_two} choisit une case"
+    puts "Joueur 2, choisit une case"
     @choosen_case2 = gets.chomp.to_s
 
 
@@ -87,31 +79,31 @@ class Board
     case @choosen_case2
 
     when "A1"
-      a1 = "X"
+      @a1 = "X"
 
     when "A2"
-      a2 = "X"
+      @a2 = "X"
 
     when "A3"
-      a3 = "X"
+      @a3 = "X"
 
     when "B1"
-      b1 = "X"
+      @b1 = "X"
 
     when "B2"
-      b2 = "X"
+      @b2 = "X"
 
     when "B3"
-      b3 = "X"
+      @b3 = "X"
 
     when "C1"
-      c1 = "X"
+      @c1 = "X"
 
     when "C2"
-      c2 = "X"
+      @c2 = "X"
 
     when "C3"
-      c3 = "X"
+      @c3 = "X"
 
     else 
       "Vous avez mal tapé la case, vous venez de perdre un tour :)"
