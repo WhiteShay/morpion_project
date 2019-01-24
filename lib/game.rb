@@ -30,10 +30,8 @@ class Game
     
 
       puts "Voici le plateau de jeu :"
-      @show = Show.new.display_board
-
-      
-      @board = Board.new.choose_case1 
+      Show.new.display_board
+      Board.new.choose_case1 
 
 
   end 

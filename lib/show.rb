@@ -7,7 +7,7 @@ require 'pry'
 
 class Show
   
-  attr_accessor 
+  attr_accessor #:a1 , :a2 , :a3 , :b1 , :b2 , :b3 , :c1 , :c2 , :c3
 
   # def initialize (a1,a2,a3,b1,b2,b3,c1,c2,c3)
 
@@ -23,9 +23,9 @@ class Show
 
   # end 
 
-  def display_board 
+  def display_board #(a1,a2,a3,b1,b2,b3,c1,c2,c3)
   
-   
+  
 
     puts "          ______________________________  "
     puts "         /_____________________________/| "

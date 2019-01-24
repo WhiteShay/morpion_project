@@ -6,10 +6,10 @@ require 'pry'
 
 
 class Board 
-  attr_accessor #:a1 , :a2 , :a3 , :b1 , :b2 , :b3 , :c1 , :c2 , :c3
+  attr_accessor #:player_one , :player_two #:a1 , :a2 , :a3 , :b1 , :b2 , :b3 , :c1 , :c2 , :c3
 
 
-  # def initialize #(a1 , a2 , a3 , b1 , b2 , b3 , c1 , c2 , c3)
+  def initialize #(a1 , a2 , a3 , b1 , b2 , b3 , c1 , c2 , c3)
 
   #   @a1 = a1
   #   @a2 = a2
@@ -30,13 +30,15 @@ class Board
   #   # @c1 = "-"
   #   # @c2 = "-"
   #   # @c3 = "-"
-  # end 
+  
+  #@game = Game.new 
+  end 
 
 
   def choose_case1
 
     # Le joueur 1 choisit une case
-    puts "Joueur 1, choisit une case"    #idéalement remplacer joueur 1 par son prénom
+    puts "#{@player_one}, choisit une case"    #idéalement remplacer joueur 1 par son prénom
     choosen_case1 = gets.chomp.to_s
 
 
@@ -84,8 +86,10 @@ class Board
     @c2 = c2
     @c3 = c3
 
-    @@array = [a1,a2,a3,b1,b2,b3,c1,c2,c3]
-    puts "#{@@array}"
+  
+
+    #@array = [a1,a2,a3,b1,b2,b3,c1,c2,c3]
+    #puts "#{@array}"
     Show.new.display_board
     
     #Show.new.display_board (a1,a2,a3,b1,b2,b3,c1,c2,c3)
@@ -98,7 +102,7 @@ class Board
 
 
     # Le joueur 2 choisit une case
-    puts "Joueur 2, choisit une case"
+    puts "#{@player_two}, choisit une case"
     @choosen_case2 = gets.chomp.to_s
 
 
