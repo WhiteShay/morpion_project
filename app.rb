@@ -1,8 +1,10 @@
+require 'bundler'
+Bundler.require
 
 
- $:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
-require 'game' 
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'application'
 
 
-Game.new.perform
 
+Application.new.perform

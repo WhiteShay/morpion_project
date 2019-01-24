@@ -1,162 +1,69 @@
-$:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
-require 'game'
-require 'board_case'
-require 'show'
-require 'pry'
+require 'bundler'
+Bundler.require
+require_relative 'board_case'
 
 
-class Board 
-  attr_accessor #:player_one , :player_two #:a1 , :a2 , :a3 , :b1 , :b2 , :b3 , :c1 , :c2 , :c3
 
+class Board
 
-  def initialize #(a1 , a2 , a3 , b1 , b2 , b3 , c1 , c2 , c3)
-
-  #   @a1 = a1
-  #   @a2 = a2
-  #   @a3 = a3
-  #   @b1 = b1
-  #   @b2 = b2
-  #   @b3 = b3
-  #   @c1 = c1
-  #   @c2 = c2
-  #   @c3 = c3
-
-  #   # @a1 = "-"
-  #   # @a2 = "-"
-  #   # @a3 = "-"
-  #   # @b1 = "-"
-  #   # @b2 = "-"
-  #   # @b3 = "-"
-  #   # @c1 = "-"
-  #   # @c2 = "-"
-  #   # @c3 = "-"
-  
-  #@game = Game.new 
-  end 
-
-
-  def choose_case1
-
-    # Le joueur 1 choisit une case
-    puts "#{@player_one}, choisit une case"    #idéalement remplacer joueur 1 par son prénom
-    choosen_case1 = gets.chomp.to_s
-
-
-    # On place le marqueur du joueur 1 dans la bonne case
-    case choosen_case1
-
-    when "A1"
-      a1 = "X"
-
-    when "A2"
-      a2 = "X"
-
-    when "A3"
-      a3 = "X"
-
-    when "B1"
-      b1 = "X"
-
-    when "B2"
-      b2 = "X"
-
-    when "B3"
-      b3 = "X"
-
-    when "C1"
-      c1 = "X"
-
-    when "C2"
-      c2 = "X"
-
-    when "C3"
-      c3 = "X"
-
-    else 
-      "Vous avez mal tapé la case, vous venez de perdre un tour :)"
-    end 
-    
-    @a1 = a1
-    @a2 = a2
-    @a3 = a3
-    @b1 = b1
-    @b2 = b2
-    @b3 = b3
-    @c1 = c1
-    @c2 = c2
-    @c3 = c3
-
+  attr_accessor :array_boardcase, :board_a1, :board_a2, :board_a3, :board_b1, :board_b2, :board_b3, :board_c1, :board_c2, :board_c3
+  # on définit les cases du jeu.
   
 
-    #@array = [a1,a2,a3,b1,b2,b3,c1,c2,c3]
-    #puts "#{@array}"
-    Show.new.display_board
-    
-    #Show.new.display_board (a1,a2,a3,b1,b2,b3,c1,c2,c3)
-    #julie = Show.new (@a1,@a2,@a3,@b1,@b2,@b3,@c1,@c2,@c3)
-  end 
+
+  def initialize
+
+                       #"content","position"
+    @board_a1 = BoardCase.new(" ", "A1") #content= " " le 1er tour
+    @board_a2 = BoardCase.new(" ", "A2")
+    @board_a3 = BoardCase.new(" ", "A3")
+    @board_b1 = BoardCase.new(" ", "B1")
+    @board_b2 = BoardCase.new(" ", "B2")
+    @board_b3 = BoardCase.new(" ", "B3")
+    @board_c1 = BoardCase.new(" ", "C1")
+    @board_c2 = BoardCase.new(" ", "C2")
+    @board_c3 = BoardCase.new(" ", "C3")
+
+    # on stock les instances dans un array. on utilise '@' pour pouvoir les appelers depuis d'autres classes. 
+    @array_boardcase = [@board_a1, @board_a2, @board_a3, @board_b1, @board_b2, @board_b3, @board_c1, @board_c2, @board_c3]
+  end
 
 
 
-  def choose_case2
+  #-------------- VARIABLE POUR METTRE DES CROIX OU RONDS ----------------
+  def update_case(case_game, x)
+    # boucle qui permet de changer le contenu des cases au fur et à mesure de la partie. 
+    @array_boardcase.each do |n|
+      # ici on associe à l'element n en fonction de sa position le jeton "x" ou "o"
+        if n.position == case_game #
+          n.content =  x #met une croix à l'emplacement "content"
+        end
+    end
+  end
+  
 
+  
+  #-------------- POSSIBILITES DE WIN ----------------
+  # 8 possibilités de win. Compare les combinaisons avec le plateau
+  def winner(x)
+    if x == @board_a1.content && x == @board_a2.content && x == @board_a3.content
+      return "Vous avez gagné"
+    elsif x == @board_b1.content && x == @board_b2.content && x == @board_b3.content
+          return"Vous avez gagné"
+    elsif x == @board_c1.content && x == @board_c2.content && x == @board_c3.content
+      return "Vous avez gagné"
+    elsif x == @board_a1.content && x == @board_b1.content && x == @board_c1.content
+      return "Vous avez gagné"
+    elsif x == @board_a2.content && x == @board_b2.content && x == @board_c2.content
+      return "Vous avez gagné"
+    elsif x == @board_a3.content && x == @board_b3.content && x == @board_c3.content
+      return "Vous avez gagné"
+    elsif x == @board_a1.content && x == @board_b2.content && x == @board_c3.content
+      return "Vous avez gagné"
+    elsif x == @board_a3.content && x == @board_b2.content && x == @board_c1.content
+      return "Vous avez gagné"
+    end
+  end
 
-    # Le joueur 2 choisit une case
-    puts "#{@player_two}, choisit une case"
-    @choosen_case2 = gets.chomp.to_s
+end
 
-
-    # On place le marqueur du joueur 2 dans la bonne case
-    case @choosen_case2
-
-    when "A1"
-      @a1 = "X"
-
-    when "A2"
-      @a2 = "X"
-
-    when "A3"
-      @a3 = "X"
-
-    when "B1"
-      @b1 = "X"
-
-    when "B2"
-      @b2 = "X"
-
-    when "B3"
-      @b3 = "X"
-
-    when "C1"
-      @c1 = "X"
-
-    when "C2"
-      @c2 = "X"
-
-    when "C3"
-      @c3 = "X"
-
-    else 
-      "Vous avez mal tapé la case, vous venez de perdre un tour :)"
-      
-    end 
-
-    #Show.new.display_board
-  end 
-
-
-  # def perform
-  #   initialize
-  #   choose_case1
-  #   show = Show.new.display_board
-  #   choose_case2
-  #   show = Show.new.display_board
-
-
-
-  # end 
-
-
-
-
-end 
