@@ -3,11 +3,10 @@ $:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher 
 require 'board'
 require 'show'
 require 'pry'
-require 'show'
 
 
 class Game 
-  attr_accessor :player_one , :player_two
+  #attr_accessor :player_one , :player_two
 
   def initialize
     @board = Board.new
@@ -29,14 +28,9 @@ class Game
       puts "Quel est le prénom du joueur 2 ?"
       @player_two = gets.chomp.to_s 
     
-    
 
       puts "Voici le plateau de jeu :"
-<<<<<<< HEAD
-       Show.new.display_board
-=======
-      @show  = Show.new.display_board
->>>>>>> 4bfeccc0a664344ddf029115b05321ddd6581536
+      @show = Show.new.display_board
 
       
       @board = Board.new.choose_case1 
