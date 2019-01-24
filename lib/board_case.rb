@@ -1,3 +1,5 @@
+require 'Board'
+
 class Board_case
   def initialize
 

@@ -1,10 +1,7 @@
 require 'router'
+require 'boardcase'
 
-class Player
+class Board
 
-  def initialize(playerone, playertwo)
-    @playerone = user1
-    @playertwo = user2
-      
-  end
+
 end
