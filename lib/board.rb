@@ -1,5 +1,7 @@
+require 'router'
+require 'boardcase'
+
 class Board
-  def initialize
-    
-  end
+
+
 end
