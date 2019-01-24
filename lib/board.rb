@@ -5,7 +5,7 @@ require 'pry'
 
 
 class Board
-  attr_accessor :choosen_case1 :choosen_case2
+  attr_accessor :choosen_case1 , :choosen_case2
 
 
 

@@ -2,12 +2,13 @@
 $:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
 require 'board'
 require 'pry'
+require 'show'
 
 
 class Game 
   
 
-  def initialize(board)
+  def initialize
     @board = Board.new
   end
 
@@ -34,8 +35,9 @@ class Game
     
 
       puts "Voici le plateau de jeu :"
-        #Chloé qui fait le plateau
+      @show  = Show.new.display_board
 
+      
       @board = Board.new.choose_case1 
 
 
