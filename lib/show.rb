@@ -1,6 +1,22 @@
-require 'Board'
-class Show
-  def initialize
+$:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
+require 'board'
+require 'pry'
 
-  end 
-end
+class Show
+
+  def 
+
+
+
+
+
+
+
+end 
+
+
+
+
+
+
+

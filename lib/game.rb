@@ -1,51 +1,44 @@
-require_relative 'board'
-require_relative 'app'
+
+$:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
+require 'board'
 require 'pry'
 
-$:.unshift File.expand_path("./../lib", __FILE__)
 
-class Game
-
-
+class Game 
+  
 
   def initialize(board)
     @board = Board.new
   end
 
 
-  # def users ( player_one, player_two )
-  #   @player_one = user1
-  #   @player_two = user2  
-  # end
+  def users 
+    @player_one = user1
+    @player_two = user2  
+  end
 
 
   def perform
     puts "BIENVENUE DANS LE MORPION INSOLITE !"
-    while true
+ 
 
-      #on affiche le menu
+      #Definition des joueurs
       puts "Quel est le prénom du joueur 1 ?"
-      user1 = gets.chomp.to_i
+      user1 = gets.chomp.to_s
       puts "Quel est le prénom du joueur 2 ?"
-      user2 = gets.chomp.to_i
+      user2 = gets.chomp.to_s
 
       @player_one = user1
       @player_two = user2  
+    
+    
 
-      binding.pry
+      puts "Voici le plateau de jeu :"
+        #Chloé qui fait le plateau
+
+      @board = Board.new.choose_case1 
 
 
-      # case params
-      # when 1
-      #   puts "Très bien on va créer un gossip"
-      #   @controller.create_gossip
-      # when 4
-      #   puts "Asta la vista ! "
-      #   break
-      # else 
-      #   puts "Ce choix n'existe pas, re-essayes !"
-      # end
-    end
   end 
 
 
