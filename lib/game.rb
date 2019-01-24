@@ -20,7 +20,7 @@ class Game
 
   def perform
     puts "BIENVENUE DANS LE MORPION INSOLITE !"
-    #while true
+ 
 
       #Definition des joueurs
       puts "Quel est le prénom du joueur 1 ?"
@@ -36,20 +36,9 @@ class Game
       puts "Voici le plateau de jeu :"
         #Chloé qui fait le plateau
 
-      @board = Board.new.choose_case 
+      @board = Board.new.choose_case1 
 
 
-      # case params
-      # when 1
-      #   puts "Très bien on va créer un gossip"
-      #   @controller.create_gossip
-      # when 4
-      #   puts "Asta la vista ! "
-      #   break
-      # else 
-      #   puts "Ce choix n'existe pas, re-essayes !"
-      # end
-    #end
   end 
 
 
