@@ -1,7 +1,7 @@
-require 'bundler'
-Bundler.require
-require 'lib/game'
 
+
+ $:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher les fichiers dans un dossier
+require 'game' 
 
 
 Game.new.perform
