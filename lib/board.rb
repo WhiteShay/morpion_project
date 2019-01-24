@@ -4,6 +4,7 @@ require 'board_case'
 require 'pry'
 
 
+<<<<<<< HEAD
 class Board 
   attr_accessor :choosen_case1 , :choosen_case2 
 
@@ -18,6 +19,12 @@ class Board
   @c2 = "-"
   @c3 = "-"
   end 
+=======
+class Board
+  attr_accessor :choosen_case1 , :choosen_case2
+
+
+>>>>>>> 4bfeccc0a664344ddf029115b05321ddd6581536
 
 
   def choose_case1

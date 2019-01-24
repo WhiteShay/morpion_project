@@ -3,6 +3,7 @@ $:.unshift File.expand_path("./../lib", __FILE__) #ligne qui permet de chercher 
 require 'board'
 require 'show'
 require 'pry'
+require 'show'
 
 
 class Game 
@@ -31,8 +32,13 @@ class Game
     
 
       puts "Voici le plateau de jeu :"
+<<<<<<< HEAD
        Show.new.display_board
+=======
+      @show  = Show.new.display_board
+>>>>>>> 4bfeccc0a664344ddf029115b05321ddd6581536
 
+      
       @board = Board.new.choose_case1 
 
 
