@@ -1,17 +1,26 @@
 # Morpion_project
 
-  À la racine, dans Morpion_project, nous avons activé un Gemfile et mis le lanceur du jeu:  app.rb
-
 Dans ce programme, nous avons mis:
- - Dans le dossier lib: 
-  - **Routeur = router.rb qui contiens la classe Game**
-*La classe Game permet de runner le jeu, elle contiens le nécessaire pour le faire fonctionner : gets.chomp des noms des joueurs, choix des cases à cocher,jeu gagnant ou match nul + sortie programme, choix utilisateur de relance d'un Game* 
+Un Gemfile activé, un app.rb runnant directement l'application appelée dans le terminal, ce README.md ;)
 
-  - **Controller = board.rb qui contiens la classe Board**
-*La classe Board permet de définir le plateau de jeu, ses bords, où placer les variables input par le joueur, les bords*
+ & Dans le dossier lib: 
+ 
+  - **Application**
+*La classe Application permet aux joueurs de lancer et de relancer (ou non) une partie.
 
-  - **View = view.rb**
+  - **Player**
+*La classe player permet d'appeler les noms des joueurs
 
-  - **Model = board_case.rb qui contiens la classe Board_case.**
+  - **Game**
+*La classe Game permet de runner le jeu, elle contiens le nécessaire pour le faire fonctionner : input du des noms des joueurs,choix de la case à cocher,loop des tours,jeu gagnant ou match nul + sortie programme* 
+
+  - **Board**
+  *La classe Board permet de définir les cases du jeu et une variable qui s'adaptera au choix de coche du joueur: x. Elle peut prendre la valeur X," " (espace vide) ou O en fonction de la case choisie par le joueur. On définit aussi dans cette classe les conditions nécessaires pour gagner.   (8 possibilités)
+  
+  - **BoardCase**
+  *La classe BoardCase nous permet d'associer l'input utilisateur au contenu qu'on veut y afficher. (joueur1 puts "A1" = X ,par exemple). 
+  
+  - **Show**
+  *La classe Show permet de définir le plateau de jeu: ses bords, où placer les variables input par le joueur*
 
 
