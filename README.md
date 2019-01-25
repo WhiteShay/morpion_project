@@ -31,3 +31,5 @@ Un Gemfile activé, un app.rb runnant directement l'application appelée dans le
   *La classe Show permet de définir le plateau de jeu: ses bords, où placer les variables input par le joueur*
 
 
+
+Ah! Et le db armé du fichier csv vide ne sert à rien, on a juste oublié de le supprimer de notre dossier avant de push.^^'
